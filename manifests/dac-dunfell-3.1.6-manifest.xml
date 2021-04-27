@@ -69,4 +69,19 @@
          revision="master"
              path="meta-dac-sdk"/>
 
+  <project remote="github"
+             name="OSSystems/meta-gstreamer1.0"
+         revision="85696cec60dc5f17f7f36322e80cf6df4dfcc559"
+             path="meta-gstreamer1.0"/>
+
+  <!-- RDK recipes, uncomment when building cobalt from RDK recipes -->
+  <!--
+  <remote name="cmf" review="https://code.rdkcentral.com/r/" fetch="https://code.rdkcentral.com/r/" />
+
+  <project remote="cmf"
+             name="components/generic/rdk-oe/meta-rdk-video"
+         revision="9f1cfed3d2278dedf602fba5a399b4400476fd06"
+             path="meta-rdk-video"/>
+   -->
+
 </manifest>

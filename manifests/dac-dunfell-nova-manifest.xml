@@ -69,7 +69,7 @@
 
   <project remote="cmf"
              name="components/generic/rdk-oe/meta-rdk-video"
-         revision="9f1cfed3d2278dedf602fba5a399b4400476fd06"
+         revision="d3b0edd07ec444481282dbb0aaf34a25ef7670fc"
              path="meta-rdk-video"/>
 
   <project remote="cmf"

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Author: Damian Wrobel <dwrobel@ertelnet.rybnik.pl>
+
+  Usage:
+  $ repo init -u https://github.com/stagingrdkm/lgpub/ -m manifests/dac-dunfell-3.1.6-manifest.xml
+  $ repo sync -v
+  $ . ./oe-init-build-env
+  $ cp ../.repo/manifests/manifests/bblayers.conf conf/
+  # on CentOS-7 switch default gcc to 7.x
+  $ [ -f /opt/rh/devtoolset-7/enable ] && source /opt/rh/devtoolset-7/enable
+  $ echo 'MACHINE="raspberrypi4"' >> conf/local.conf
+-->
+<manifest>
+  <remote name="github"
+         fetch="ssh://git@github.com/"/>
+
+  <remote name="oe-org"
+         fetch="git://git.openembedded.org"/>
+
+  <remote name="yocto"
+         fetch="git://git.yoctoproject.org/"/>
+
+  <default remote="github" revision="master" sync-j="32" />
+
+
+  <project remote="github"
+             name="dwrobel/poky"
+         revision="dw-dunfell-3.1.6"
+             path="."/>
+
+  <project remote="oe-org"
+             name="meta-openembedded"
+         revision="dunfell"
+             path="meta-openembedded"/>
+
+  <project remote="yocto"
+             name="meta-virtualization"
+         revision="dunfell"
+             path="meta-virtualization"/>
+
+  <project remote="yocto"
+             name="meta-raspberrypi"
+         revision="dunfell"
+             path="meta-raspberrypi"/>
+
+  <project remote="oe-org"
+             name="meta-python2"
+         revision="dunfell"
+             path="meta-python2"/>
+
+  <project remote="github"
+             name="meta-qt5/meta-qt5"
+         revision="dunfell"
+             path="meta-qt5"/>
+
+  <project remote="github"
+             name="dwrobel/meta-clang"
+         revision="dw-clang-11.0.1"
+             path="meta-clang"/>
+
+  <project remote="github"
+             name="stagingrdkm/meta-dac-sdk"
+         revision="cobalt_nova"
+             path="meta-dac-sdk"/>
+
+  <!-- RDK recipes, uncomment when building cobalt from RDK recipes -->
+  <remote name="cmf" review="https://code.rdkcentral.com/r/" fetch="https://code.rdkcentral.com/r/" />
+
+  <project remote="cmf"
+             name="components/generic/rdk-oe/meta-rdk-video"
+         revision="9f1cfed3d2278dedf602fba5a399b4400476fd06"
+             path="meta-rdk-video"/>
+
+  <project remote="cmf"
+             name="components/generic/avbus-poc"
+         revision="master"
+             path="avbus-poc-src"/>
+
+
+</manifest>

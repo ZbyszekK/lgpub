@@ -58,6 +58,11 @@
              name="dwrobel/meta-clang"
          revision="dw-clang-11.0.1"
              path="meta-clang"/>
+  
+  <project remote="github"
+             name="dwrobel/meta-webkit"
+         revision="dw-main"
+             path="meta-webkit"/>
 
   <project remote="github"
              name="stagingrdkm/meta-dac-sdk"
